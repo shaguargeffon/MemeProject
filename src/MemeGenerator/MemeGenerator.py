@@ -37,6 +37,7 @@ class MemeEngine(object):
             pass
         else:
             os.mkdir(self.output_dir)
+        self.image_dir = None
 
     def check_image(self, image_path):
         """Check the given image if it is valid.
@@ -83,6 +84,15 @@ class MemeEngine(object):
         :param width: width of the output image, optional
         :return: a QuoteModel object.
         """
+        if width < 10:
+            print("The requested width of image is smaller than 10, fixed to 10.")
+            width = 10
+        elif width > 1024:
+            print("The requested width of image is larger than 1024, fixed to 1024.")
+            width = 1024
+        else:
+            pass
+
         check_result = self.check_image(img_path)
         if not check_result:
             print("The given parameters can not .")
@@ -123,9 +133,9 @@ class MemeEngine(object):
             output = out.convert('RGB')
             mem_name = self.get_random_mem_name(self.output_dir)
             if self.output_dir[-1] == '/':
-                self.output_dir = self.output_dir + mem_name
+                self.image_dir = self.output_dir + mem_name
             else:
-                self.output_dir = self.output_dir + '/' + mem_name
-            output.save(self.output_dir)
+                self.image_dir = self.output_dir + '/' + mem_name
+            output.save(self.image_dir)
 
-        return self.output_dir
+        return self.image_dir
