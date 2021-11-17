@@ -27,7 +27,7 @@ class PDFIngestor(IngestorInterface):
         :return: a list contains QuoteModel objects.
         """
         if not cls.can_ingest(filename):
-            raise Exception('cannot ingest pdf file.')
+            raise ValueError
 
         temp_txt_file = 'temp.txt'
         sh = subprocess.call(['pdftotext', filename, temp_txt_file])

@@ -26,7 +26,7 @@ class CSVIngestor(IngestorInterface):
         :return: a list contains QuoteModel objects.
         """
         if not cls.can_ingest(filename):
-            raise Exception('cannot ingest csv file.')
+            raise ValueError
 
         parse_list = list()
         csv_handle = pandas.read_csv(filename, header=0)

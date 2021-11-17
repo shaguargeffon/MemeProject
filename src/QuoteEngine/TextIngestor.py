@@ -25,7 +25,7 @@ class TextIngestor(IngestorInterface):
         :return: a list contains QuoteModel objects.
         """
         if not cls.can_ingest(filename):
-            raise Exception('cannot ingest txt file.')
+            raise ValueError
 
         parse_list = list()
 
@@ -36,7 +36,7 @@ class TextIngestor(IngestorInterface):
                 line = line.strip('\r\n')
                 if len(line) >= 2:
                     quote_model_info = [x.strip() for x in line.split('-')]
-                    body = quote_model_info[0].strip('"')
+                    body = quote_model_info[0].strip()
                     author = quote_model_info[1].strip()
                     qm = QuoteModel(body, author)
                     parse_list.append(qm)

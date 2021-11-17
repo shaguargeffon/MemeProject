@@ -26,7 +26,7 @@ class DocxIngestor(IngestorInterface):
         :return: a list contains QuoteModel objects.
         """
         if not cls.can_ingest(filename):
-            raise Exception('cannot ingest Docx file.')
+            raise ValueError
         parse_list = list()
         docx_handle = docx.Document(filename)
 

@@ -63,10 +63,14 @@ class MemeRandomMethod1(MemeRandomInterface):
             raise FontDirectoryMissingError
 
         fonts = os.listdir(font_path)
-        if fonts:
-            while True:
-                font = random.choice(fonts)
-                if font.split('.')[-1] == cls.font_type:
-                    return font
-        else:
+        for any_font in fonts:
+            if any_font.split('.')[-1] != cls.font_type:
+                # all fonts shall have the extension ttf
+                raise FontDirectoryMissingError
+
+        # Check if it is an empty directory
+        if not fonts:
             raise FontsMissingError
+
+        font = random.choice(fonts)
+        return font

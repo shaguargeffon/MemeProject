@@ -278,3 +278,9 @@ Trouble Shooting during install the tools:
 - The email Receiver and Sender shall both support SMTP. You can use gmail for SMTP, but you need a configuration. You can reference this link : https://kb.synology.com/en-ca/SRM/tutorial/How_to_use_Gmail_SMTP_server_to_send_emails_for_SRM.
 - use example: "python3 meme_email.py  'shaguarhan123@gmail.com' 'shaguarhan1234@gmail.com' --server 'smtp.gmail.com'  'Email Title' 'Hello'"
 - use example explanation: 'shaguarhan123@gmail.com' is sender, 'shaguarhan1234@gmail.com' is receiver, 'smtp.gmail.com' is server name, 'Email Title' is title of email, 'Hello' is content.
+
+
+## Unit Test
+- The unit test covers the modules which include functions/classes.
+- For the test the unittest module of python is in use.
+- the following modules were tested: CSVIngestor, DocxIngestor, Ingestor, IngestorInterface, MemeGenerator, MemeRandom, PDFIngestor, QuoteModel, TextIngestor
