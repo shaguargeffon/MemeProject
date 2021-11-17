@@ -85,10 +85,10 @@ class MemeEngine(object):
         :return: a QuoteModel object.
         """
         if width < 10:
-            print("The requested width of image is smaller than 10, fixed to 10.")
+            print("The requested width of image is smaller than 10.")
             width = 10
         elif width > 1024:
-            print("The requested width of image is larger than 1024, fixed to 1024.")
+            print("The requested width of image is larger than 1024.")
             width = 1024
         else:
             pass
