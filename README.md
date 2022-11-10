@@ -6,12 +6,23 @@ In "CLI" mode you should give necessary parameters to generate a meme which is u
 In web mode you are able to use the button random to generate a random meme.
 In web mode you are able to input url, body and text to generate a meme.
 
+
 # Instructions about the project
 
 The goal of this project is to build a "meme generator" – a multimedia application to dynamically generate memes, 
 including an image with an overlaid quote. It’s not that simple though! Your content team spent countless hours writing quotes in a variety of filetypes. 
 You could manually copy and paste these quotes into one standard format. You’re going to over-engineer a solution to load quotes from each file to show
 off your fancy new Python skills.
+
+
+# How to use it
+
+Go to the path /src.
+Execute the command "python3 app.py", the server will start.
+Copy the given address, input the address to an opened web browser, for instance : http://127.0.0.1:5000 .
+Press the button "Random" and you will get the new generated Meme.
+Alternative you can also press the button "Creator", then input the URL of image, quote body and quote author to generate a self-defined Meme.
+
 
 ## Set up a cross development environment for the project
 
